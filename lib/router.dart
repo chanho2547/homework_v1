@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:thread_homework/common/main_navigation_screen.dart';
+import 'package:thread_homework/features/auth/auth_screen.dart';
 import 'package:thread_homework/features/home/home_screen.dart';
 import 'package:thread_homework/features/likes/likes_screen.dart';
 import 'package:thread_homework/features/profile/profile_screen.dart';
@@ -16,6 +17,11 @@ final router = GoRouter(
         final tab = state.params["tab"]!;
         return MainNavigationScreen(tab: tab);
       },
+    ),
+    GoRoute(
+      name: AuthScreen.routeName,
+      path: AuthScreen.routeUrl,
+      builder: (context, state) => const AuthScreen(),
     ),
     GoRoute(
       name: HomeScreen.routeName,
